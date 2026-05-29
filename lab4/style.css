@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f0f4f8; /* Мягкий светлый фон */
+    color: #334155;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: rgba(167, 211, 191, 0.7); /* Наш мятный пастельный */
+    border-bottom: 1px solid #cbd5e1;
+}
+
+.logo {
+    max-height: 50px;
+    object-fit: contain;
+}
+
+.title {
+    flex: 1;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    color: #2c4a3e; /* Темно-мятный для читаемости текста */
+}
+
+.header-spacer {
+    width: 120px;
+}
+
+.main {
+    min-height: calc(100vh - 160px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* Стили самого калькулятора */
+.calculator {
+    width: 100%;
+    max-width: 420px;
+    padding: 28px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(148, 163, 184, 0.15);
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #1e293b;
+    font-size: 24px;
+}
+
+.calculator-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Экран калькулятора */
+.display {
+    width: 100%;
+    padding: 18px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 28px;
+    text-align: right;
+    font-family: monospace;
+    background: #f8fafc;
+    color: #1e293b;
+}
+
+/* Сетка кнопок */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    padding: 18px;
+    border: none;
+    border-radius: 12px;
+    background: #f1f5f9; /* Светло-серые базовые кнопки */
+    color: #334155;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+button:hover {
+    background: #e2e8f0;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Выделение операторов (плюс, минус и т.д.) пастельным лавандовым */
+button[name="operator"], 
+button:nth-child(4n) {
+    background: #e0e7ff; 
+    color: #4f46e5;
+}
+
+button[name="operator"]:hover, 
+button:nth-child(4n):hover {
+    background: #c7d2fe;
+}
+
+/* Кнопка "Равно" — акцентная мятная */
+button[value="="] {
+    background: #a7d3bf;
+    color: #1b4332;
+}
+
+button[value="="]:hover {
+    background: #81c2a6;
+}
+
+/* Кнопка Очистки (C) */
+button[value="C"] {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+button[value="C"]:hover {
+    background: #fca5a5;
+}
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #475569;
+    color: #f8fafc;
+    font-weight: 600;
+}
