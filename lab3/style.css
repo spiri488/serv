@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f0f4f8;
+    color: #334155;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: rgba(167, 211, 191, 0.7); /* Мятный пастельный */
+    border-bottom: 1px solid #cbd5e1;
+}
+
+.logo {
+    max-height: 50px;
+    object-fit: contain;
+}
+
+.title {
+    flex: 1;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    color: #2c4a3e;
+}
+
+.header-spacer {
+    width: 120px;
+}
+
+.main {
+    min-height: calc(100vh - 160px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.card {
+    width: 100%;
+    max-width: 680px;
+    padding: 32px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(148, 163, 184, 0.12);
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 24px;
+    text-align: center;
+    color: #1e293b;
+}
+
+.equation {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 24px;
+    color: #a78bfa; /* Пастельный лавандовый акцент на уравнение */
+}
+
+.result p {
+    font-size: 18px;
+    margin: 12px 0;
+    line-height: 1.6;
+}
+
+.answer {
+    font-size: 24px;
+    font-weight: 700;
+    color: #10b981; /* Зеленый цвет для финального ответа */
+    text-align: center;
+    margin-top: 20px !important;
+}
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #475569;
+    color: #f8fafc;
+    font-weight: 600;
+}
