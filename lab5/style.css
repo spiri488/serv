@@ -1,0 +1,324 @@
+:root {
+    /* Наша фирменная пастельная палитра */
+    --mint-header: rgba(167, 211, 191, 0.7); /* Мятно-бирюзовая шапка */
+    --mint-text: #2c4a3e;                    /* Текст в шапке */
+    --lavender: #a78bfa;                     /* Лавандовые активные элементы */
+    --lavender-hover: #8b5cf6;               /* Наведение на лавандовый */
+    --light-lavender: rgba(167, 139, 250, 0.1); /* Фон для th таблиц и подложек */
+    --border: #cbd5e1;                       /* Мягкие пастельные границы */
+    --text: #334155;                         /* Текст основного интерфейса */
+    --bg: #f0f4f8;                           /* Общий фоновый цвет */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* --- ВЕРХНЯЯ ПАНЕЛЬ (HEADER) --- */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: var(--mint-header);
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    max-height: 50px;
+    width: auto;
+    object-fit: contain;
+}
+
+.title {
+    flex: 1;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--mint-text);
+}
+
+.header-spacer {
+    width: 120px;
+}
+
+/* --- ОСНОВНОЙ КОНТЕНТ И СЕТКА (LAYOUT) --- */
+.main {
+    min-height: calc(100vh - 120px);
+    padding: 30px 20px 90px;
+}
+
+.edit-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 32px;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- НАВИГАЦИОННОЕ МЕНЮ (menu.php) --- */
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(148, 163, 184, 0.08);
+}
+
+.main-menu, .submenu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.submenu {
+    padding-top: 12px;
+    border-top: 1px dashed var(--border);
+}
+
+.menu-link {
+    display: block;
+    padding: 10px 14px;
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.menu-link:hover {
+    background: var(--light-lavender);
+    color: var(--lavender-hover);
+}
+
+/* Активные пункты меню получают пастельный лавандовый фон */
+.menu-link.active {
+    background: var(--lavender);
+    color: #ffffff;
+}
+
+.menu-link.small {
+    font-size: 14px;
+    padding: 8px 12px;
+}
+
+/* --- КАРТОЧКА ФОРМЫ И ТАБЛИЦ --- */
+h1 {
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-size: 24px;
+    color: #1e293b;
+}
+
+.empty {
+    text-align: center;
+    font-weight: 700;
+    color: #64748b;
+    padding: 20px;
+}
+
+/* Стилизация полей ввода (add.php / edit.php) */
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.form-row label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #475569;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: inherit;
+    background-color: #f8fafc;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--lavender);
+    box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.2);
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Кнопка отправки формы */
+.form-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 10px;
+    background: var(--lavender);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.form-btn:hover {
+    background: var(--lavender-hover);
+}
+
+/* --- СИСТЕМНЫЕ УВЕДОМЛЕНИЯ --- */
+.message {
+    padding: 14px;
+    border-radius: 10px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.success {
+    color: #1b4332;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.error {
+    color: #721c24;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+/* --- ТАБЛИЦА ВЫВОДА ДАННЫХ (viewer.php) --- */
+.data-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(148, 163, 184, 0.06);
+    margin-top: 16px;
+}
+
+.data-table th,
+.data-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #e2e8f0;
+    border-right: 1px solid #e2e8f0;
+    text-align: left;
+    font-size: 14px;
+}
+
+.data-table th:last-child,
+.data-table td:last-child {
+    border-right: none;
+}
+
+.data-table tr:last-child td {
+    border-bottom: none;
+}
+
+.data-table th {
+    background: var(--light-lavender);
+    color: #4f46e5;
+    font-weight: 700;
+}
+
+.data-table tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+/* --- ПОСТРАНИЧНАЯ НАВИГАЦИЯ (PAGINATION) --- */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.page-link {
+    display: inline-block;
+    padding: 8px 14px;
+    min-width: 36px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text);
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.page-link:hover {
+    border-color: var(--lavender);
+    color: var(--lavender-hover);
+}
+
+.page-link.active {
+    background: var(--lavender);
+    border-color: var(--lavender);
+    color: #ffffff;
+}
+
+/* --- СПИСОК УДАЛЕНИЯ ЗАПИСЕЙ (delete.php) --- */
+.delete-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.delete-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+/* Интуитивный мягкий пастельно-красный эффект при наведении на удаление */
+.delete-link:hover {
+    background: #fee2e2;
+    border-color: #fca5a5;
+    color: #ef4444;
+}
+
+/* --- ПОДВАЛ СТРАНИЦЫ (FOOTER) --- */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 16px;
+    text-align: center;
+    background: #475569;
+    color: #f8fafc;
+    font-weight: 600;
+    border-top: 1px solid var(--border);
+}
