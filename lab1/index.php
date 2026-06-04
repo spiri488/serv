@@ -1,4 +1,7 @@
 <?php
+
+date_default_timezone_set('Europe/Moscow');
+
 // Определяем абсолютный путь к файлу .env в текущей папке проекта
 $envPath = __DIR__ . '/.env';
 
